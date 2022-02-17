@@ -30,7 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const form = document.querySelector('#new-item-form');
+  const list = document.querySelector('#reading-list');
+  const header = document.querySelector('h1')
+
   form.addEventListener('submit', handleForm);
-  
+
+  const deleteButton = document.createElement('button')
+  deleteButton.innerText = "Delete All"
+  header.appendChild(deleteButton)
+
+  const deleteAllItems = function() {
+
+    console.log('button is working')
+    for(li of list) {
+      li.removeChild()
+    }
+  } 
+
+  deleteButton.addEventListener('click', deleteAllItems)
 
 })
