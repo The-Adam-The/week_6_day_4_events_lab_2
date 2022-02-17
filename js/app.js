@@ -8,14 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // console.log(event.target.author.value);
     // console.log(event.target.category.value);
 
-    const titleListItem = document.createElement('li')
-    titleListItem.textContent = `${event.target.title.value}`
+    const listItem = document.createElement('li')
+    
+    const titleListItem = document.createElement('p');
+    titleListItem.textContent = `Title: ${event.target.title.value}`;
 
-    const list = document.querySelector('#reading-list')
-    list.appendChild(titleListItem)
+    const authorListItem = document.createElement('p')
+    authorListItem.textContent = `Author: ${event.target.author.value}`;
+
+    const categoryListItem = document.createElement('p');
+    categoryListItem.textContent = `Category: ${event.target.category.value}`
+
+    const list = document.querySelector('#reading-list');
+    list.appendChild(listItem);
+    listItem.appendChild(titleListItem)
+    listItem.appendChild(authorListItem)
+    listItem.appendChild(categoryListItem)
+    
+    form.reset()
 
   }
 
-  const form = document.querySelector('#new-item-form')
-  form.addEventListener('submit', handleForm)
+  const form = document.querySelector('#new-item-form');
+  form.addEventListener('submit', handleForm);
+  
+
 })
