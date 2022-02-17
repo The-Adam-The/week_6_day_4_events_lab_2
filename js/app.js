@@ -21,32 +21,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const list = document.querySelector('#reading-list');
     list.appendChild(listItem);
-    listItem.appendChild(titleListItem)
-    listItem.appendChild(authorListItem)
-    listItem.appendChild(categoryListItem)
+    listItem.appendChild(titleListItem);
+    listItem.appendChild(authorListItem);
+    listItem.appendChild(categoryListItem);
     
-    form.reset()
+    form.reset();
 
   }
 
   const form = document.querySelector('#new-item-form');
   const list = document.querySelector('#reading-list');
-  const header = document.querySelector('h1')
+  const header = document.querySelector('h1');
 
   form.addEventListener('submit', handleForm);
 
-  const deleteButton = document.createElement('button')
-  deleteButton.innerText = "Delete All"
-  header.appendChild(deleteButton)
+  const deleteButton = document.createElement('button');
+  deleteButton.innerText = "Delete All";
+  header.appendChild(deleteButton);
 
   const deleteAllItems = function() {
-
-    console.log('button is working')
-    for(li of list) {
-      li.removeChild()
-    }
+    list.innerHTML ="";
   } 
 
-  deleteButton.addEventListener('click', deleteAllItems)
+  deleteButton.addEventListener('click', deleteAllItems);
 
 })
