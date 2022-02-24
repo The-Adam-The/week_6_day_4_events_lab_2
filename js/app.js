@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // console.log(event.target.author.value);
     // console.log(event.target.category.value);
 
-    const listItem = document.createElement('li')
+    const listItem = document.createElement('li');
     
     const titleListItem = document.createElement('p');
     titleListItem.textContent = `Title: ${event.target.title.value}`;
@@ -24,10 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     listItem.appendChild(titleListItem);
     listItem.appendChild(authorListItem);
     listItem.appendChild(categoryListItem);
-    
     form.reset();
 
-  }
+  };
 
   const form = document.querySelector('#new-item-form');
   const list = document.querySelector('#reading-list');
@@ -41,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const deleteAllItems = function() {
     list.innerHTML ="";
-  } 
+  }; 
 
   deleteButton.addEventListener('click', deleteAllItems);
 
-})
+});
